@@ -1,0 +1,19 @@
+Errors:
+frm-addressbook.php line 62, object was missing:
+Original: $c = AddNewCV($dbh, $cvname);
+Modified: $c = $myparts->AddNewCV($dbh, $cvname);
+
+ToDo:
+Make responsible
+
+
+***
+Add Manufacturers database and make them selectable at Add component
+***
+Database components need to alter:
+ALTER TABLE `components` CHANGE `mfgname` `mfgname` INT(10) NULL DEFAULT NULL;
+
+Add new Address type in config-axtparts.php
+define ("CVTYPE_MANUFACTURER", 0x20);
+
+Modify frm-address.php accordingly
